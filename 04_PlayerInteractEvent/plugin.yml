@@ -1,0 +1,4 @@
+name: PlayerInteractEvent
+main: org.cherrygods.main.PlayerInteractEvent
+version: 1.0
+author: CherryGods

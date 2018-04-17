@@ -1,0 +1,4 @@
+name: BlockEventMain
+main: org.cherrygods.main.BlockEventMain
+version: 1.0
+author: CherryGods

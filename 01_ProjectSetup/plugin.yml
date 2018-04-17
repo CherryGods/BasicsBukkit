@@ -1,0 +1,4 @@
+name: ProjectSetup
+main: org.cherrygods.main.ProjectSetup
+version: 1.0
+author: CherryGods

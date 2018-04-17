@@ -1,0 +1,4 @@
+name: RegisterEvents
+main: org.cherrygods.main.RegisterEvents
+version: 1.0
+author: CherryGods

@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: spigot-1.8.8-R0.1-SNAPSHOT-latest.jar
+
