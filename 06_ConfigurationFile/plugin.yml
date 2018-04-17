@@ -1,0 +1,4 @@
+name: ConfigurationFileTest
+main: org.cherrygods.main.ConfigurationFileTest
+version: 1.0
+author: CherryGods
