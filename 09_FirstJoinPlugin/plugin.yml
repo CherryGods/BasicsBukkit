@@ -1,0 +1,4 @@
+name: FistJoinPlugin
+main: org.cherrygods.main.JoinPluginClass
+version: 1.0
+author: CherryGods
