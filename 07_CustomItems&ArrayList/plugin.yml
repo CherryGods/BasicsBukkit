@@ -1,0 +1,4 @@
+name: CustomItems
+main: org.cherrygods.main.CustomItemsClass
+version: 1.0
+author: CherryGods
