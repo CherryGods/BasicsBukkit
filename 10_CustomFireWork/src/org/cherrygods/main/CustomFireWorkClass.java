@@ -1,5 +1,6 @@
 package org.cherrygods.main;
 
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.cherrygods.listeners.EventListener;
 
@@ -10,12 +11,14 @@ import org.cherrygods.listeners.EventListener;
 public class CustomFireWorkClass extends JavaPlugin {
     @Override
     public void onDisable() {
-        getLogger().info("CustomFireWorkClass has been Disable");
+        getServer().getConsoleSender().sendMessage(ChatColor.AQUA + "CustomFireWorkClass >> "
+                +ChatColor.YELLOW+"Plugin has been Disable");
     }
 
     @Override
     public void onEnable() {
-        getLogger().info("CustomFireWorkClass has been Enable");
+        getServer().getConsoleSender().sendMessage(ChatColor.AQUA + "CustomFireWorkClass >> "
+                +ChatColor.YELLOW+"Plugin has been Enable");
         loadConfig();
         getServer().getPluginManager().registerEvents(new EventListener(), this);
     }
@@ -23,5 +26,7 @@ public class CustomFireWorkClass extends JavaPlugin {
     public void loadConfig() {
         getConfig().options().copyDefaults(true);
         saveConfig();
+        getServer().getConsoleSender().sendMessage(ChatColor.AQUA + "CustomFireWorkClass >> "
+                +ChatColor.YELLOW+"Config has been Loaded");
     }
 }

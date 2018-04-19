@@ -1,7 +1,12 @@
 package org.cherrygods.listeners;
 
 
-import org.bukkit.*;
+
+import net.md_5.bungee.api.ChatColor;
+import org.bukkit.Color;
+import org.bukkit.FireworkEffect;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -11,6 +16,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.FireworkEffect.*;
+import org.bukkit.plugin.Plugin;
+import org.cherrygods.main.CustomFireWorkClass;
+
 
 import java.util.ArrayList;
 
@@ -19,16 +27,17 @@ import java.util.ArrayList;
  * @since 2018-4-18 20:33:27
  */
 public class EventListener implements Listener {
-    private String prefix = (ChatColor.AQUA + "CustomFireWork>> ");
-
+    private String prefix = (ChatColor.GREEN + "CustomFireWork >> ");
+    private Plugin plugin = CustomFireWorkClass.getPlugin(CustomFireWorkClass.class);
     @EventHandler
     public void onNewPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         //判断玩家是否进入过服务器
-        if (!player.hasPlayedBefore()) {
+        if (player.hasPlayedBefore()) {
             player.setHealth(1);
             event.setJoinMessage("");
-            player.sendMessage(prefix + "Welcome Back" + ChatColor.GOLD + player.getName());
+            player.sendMessage(prefix+ChatColor.YELLOW+"The server is "+ChatColor.GOLD+plugin.getServer().getName());
+            player.sendMessage(prefix + ChatColor.YELLOW+"Welcome Back " + ChatColor.GOLD + player.getName()+ChatColor.WHITE+" ^_^!");
             ItemStack item = new ItemStack(Material.BOOK, 1);
             ItemMeta meta = item.getItemMeta();
             meta.setDisplayName(ChatColor.AQUA + "Welcome Book");
@@ -37,7 +46,7 @@ public class EventListener implements Listener {
             meta.setLore(loreList);
             item.setItemMeta(meta);
             player.getInventory().setItem(0, item);
-            Location spawn = new Location(player.getWorld(), 155, 70, -17);
+            Location spawn = new Location(player.getWorld(), 185, 103, -27);
             player.teleport(spawn);
             //创建一个FireWork，位置就是上面设置的出生点
             Firework fw = player.getWorld().spawn(player.getLocation(), Firework.class);
