@@ -1,2 +1,2 @@
 # BukkitCode
-# 代码参考htpps://github.com/TheSourceCode
+# 代码参考https://github.com/TheSourceCode
