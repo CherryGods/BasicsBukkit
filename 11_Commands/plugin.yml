@@ -1,0 +1,9 @@
+name: CommandsPlugin
+main: org.cherrygods.main.CommandsPluginClass
+version: 1.0
+author: CherryGods
+
+commands:
+  giveitem:
+    usage: /<command>
+    description: GiveItem Command
