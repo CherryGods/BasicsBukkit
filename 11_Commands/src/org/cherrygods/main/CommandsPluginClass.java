@@ -1,7 +1,6 @@
 package org.cherrygods.main;
 
 import org.bukkit.ChatColor;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.cherrygods.commands.GiveItemCommand;
 import org.cherrygods.listeners.EventListener;
@@ -13,7 +12,7 @@ import org.cherrygods.utils.GetPrefix;
  */
 public class CommandsPluginClass extends JavaPlugin {
     private GiveItemCommand gic = new GiveItemCommand();
-    private GetPrefix prefix = new GetPrefix();
+    private GetPrefix prefix = null;
     @Override
     public void onDisable() {
         getServer().getConsoleSender().sendMessage(
@@ -22,8 +21,10 @@ public class CommandsPluginClass extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        //必须放这里new，放外面new数据加载不到服务器里，就会造成空指针NullPotionException
+        prefix = new GetPrefix();
         //prefix.cmdPrefix
-        getServer().getConsoleSender().sendMessage(ChatColor.YELLOW+"Plugin has been Enable");
+        getServer().getConsoleSender().sendMessage(prefix.cmdPrefix+ChatColor.YELLOW+"Plugin has been Enable");
         loadConfig();
 
         getServer().getPluginManager().registerEvents(new EventListener(), this);
@@ -34,6 +35,6 @@ public class CommandsPluginClass extends JavaPlugin {
     public void loadConfig() {
         getConfig().options().copyDefaults(true);
         saveConfig();
-        getServer().getConsoleSender().sendMessage(ChatColor.YELLOW+"Config has been Loaded");
+        getServer().getConsoleSender().sendMessage(prefix.cmdPrefix+ChatColor.YELLOW+"Config has been Loaded");
     }
 }

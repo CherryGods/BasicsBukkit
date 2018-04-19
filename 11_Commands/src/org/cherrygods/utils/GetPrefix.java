@@ -9,11 +9,12 @@ import org.cherrygods.main.CommandsPluginClass;
  * @since 2018-4-19 14:15:25
  */
 public class GetPrefix {
-//        public Plugin plugin = CommandsPluginClass.getPlugin(CommandsPluginClass.class);
-//        /**
-//         * serverPrefix:服务器里的插件前缀
-//         * cmdPrefix:控制台里的插件前缀
-//         */
-//        public String serverPrefix = (ChatColor.GREEN+plugin.getName()+" >> ");
-//        public String cmdPrefix = (ChatColor.AQUA+plugin.getName()+" >> ");
+    public Plugin plugin = CommandsPluginClass.getPlugin(CommandsPluginClass.class);
+    /**
+     * serverPrefix:服务器里的插件前缀
+     * cmdPrefix:控制台里的插件前缀
+     */
+    public String serverPrefix = ChatColor.GREEN + plugin.getName() + " >> ";
+    public String cmdPrefix = ChatColor.AQUA + plugin.getName() + " >> ";
 }
+

@@ -9,6 +9,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.cherrygods.utils.GetPrefix;
+
 /**
  * @author CherrGods
  * @since 2018-4-19 14:05:09
@@ -27,18 +29,20 @@ public class GiveItemCommand extends CommandExecute implements CommandExecutor {
                         return true;
                     }else{
                         //new GetPrefix().serverPrefix+
-                        commandSender.sendMessage(
+                        commandSender.sendMessage(new GetPrefix().serverPrefix+
                                 ChatColor.YELLOW+args[0]+ChatColor.RED+" is no valid item");
                         return true;
                     }
                 }else {
                     commandSender.sendMessage(
+                            new GetPrefix().serverPrefix+
                             ChatColor.RED + "Not enough arguments!");
                     return true;
                 }
             }
         }else{
             commandSender.sendMessage(
+                    new GetPrefix().serverPrefix+
                     ChatColor.RED+"Only player can use the command!");
             return true;
         }
