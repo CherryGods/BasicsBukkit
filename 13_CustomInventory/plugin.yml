@@ -1,0 +1,9 @@
+name: CustomInventory
+main: org.cherrygods.main.CustomInventoryClass
+version: 1.0
+author: CherryGods
+
+commands:
+  openinventory:
+    usage: /<commands>
+    description: 打开自定义容器
