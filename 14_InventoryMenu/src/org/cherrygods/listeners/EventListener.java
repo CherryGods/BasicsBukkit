@@ -30,17 +30,13 @@ public class EventListener implements Listener {
         }
         //判断点击的容器是否是创建的自定义容器
         if(open.getName().equals(ChatColor.AQUA+"InventoryMenu")){
-            System.out.println(1);
             event.setCancelled(true);
-            System.out.println(5);
             //判断被点击的item是否为null，并且item是否没有meta
             if(item == null || !item.hasItemMeta()){
-                System.out.println(2);
                 return;
             }
             //判断被点击的item是否是自定义item的health
             if(item.getItemMeta().getDisplayName().equals(ChatColor.RED+"HEALTH")){
-                System.out.println(3);
                 //如果是的话，那么就关闭容器
                 player.closeInventory();
                 CustomInventoryCommand customInventoryCommand = new CustomInventoryCommand();
@@ -49,7 +45,6 @@ public class EventListener implements Listener {
             }
             //判断被点击的item是否是自定义item的food
             if(item.getItemMeta().getDisplayName().equals(ChatColor.RED+"FOOD")){
-                System.out.println(4);
                 //如果是的话，那么就关闭容器
                 player.closeInventory();
 

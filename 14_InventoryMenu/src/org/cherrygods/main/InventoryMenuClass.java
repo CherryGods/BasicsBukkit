@@ -24,6 +24,6 @@ public class InventoryMenuClass extends JavaPlugin {
         getPrefix1 = new GetPrefix1();
         getCommand(customInventoryCommand.cmd).setExecutor(customInventoryCommand);
         getServer().getConsoleSender().sendMessage(getPrefix1.cmdPrefix+ChatColor.AQUA+"has been Enable");
-        getServer().getPluginManager().registerEvents(new EventListener(),this);
+        getServer().ge tPluginManager().registerEvents(new EventListener(),this);
     }
 }
