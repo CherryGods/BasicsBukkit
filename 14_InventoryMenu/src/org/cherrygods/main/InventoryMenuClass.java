@@ -12,7 +12,7 @@ import org.cherrygods.utils.GetPrefix1;
  */
 public class InventoryMenuClass extends JavaPlugin {
     private GetPrefix1 getPrefix1;
-    private CustomInventoryCommand customInventoryCommand = new CustomInventoryCommand();
+    private CustomInventoryCommand customInventoryCommand;
     @Override
     public void onDisable() {
         getServer().getConsoleSender().sendMessage(getPrefix1.cmdPrefix+ChatColor.AQUA+"has been Disable");
@@ -20,6 +20,7 @@ public class InventoryMenuClass extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        customInventoryCommand = new CustomInventoryCommand();
         getPrefix1 = new GetPrefix1();
         getCommand(customInventoryCommand.cmd).setExecutor(customInventoryCommand);
         getServer().getConsoleSender().sendMessage(getPrefix1.cmdPrefix+ChatColor.AQUA+"has been Enable");

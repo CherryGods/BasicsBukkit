@@ -29,7 +29,7 @@ public class CustomInventoryCommand implements CommandExecutor {
         //生成一个站位item，具体效果看游戏内
         ItemStack emptyItem = new ItemStack(Material.STAINED_GLASS_PANE,1,(byte)15);
         ItemMeta emptyMeta = emptyItem.getItemMeta();
-        emptyMeta.setDisplayName(ChatColor.MAGIC+"啥也没有QAQ");
+        emptyMeta.setDisplayName(ChatColor.MAGIC+"&d啥也没有啊");
         emptyItem.setItemMeta(emptyMeta);
         //生成生命值item，具体效果看游戏内
         ItemStack healthItem = new ItemStack(Material.INK_SACK,healthInt,(byte)15);
@@ -60,7 +60,6 @@ public class CustomInventoryCommand implements CommandExecutor {
         if(commandSender instanceof Player){
             if(command.getName().equalsIgnoreCase(cmd)){
                 Player player = (Player) commandSender;
-                player.sendMessage("tt");
                 newInventory(player);
                 return true;
             }
