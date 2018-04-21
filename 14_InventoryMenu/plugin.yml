@@ -1,0 +1,4 @@
+name: InventoryMenu
+main: org.cherrygods.main.InventoryMenuClass
+version: 1.0
+author : CherryGods
