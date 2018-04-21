@@ -1,0 +1,12 @@
+name: TeleportingWarping
+main: org.cherrygods.main.TeleportingWarpingClass
+version: 1.0
+author: CherryGods
+
+commands:
+  warp:
+    usage: /<warp> [location name]
+    description: This is Warp Command
+  setwarp:
+    usage: /<setwarp> <location> <location name>
+    description: This is setWarp command
