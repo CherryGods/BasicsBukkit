@@ -7,14 +7,15 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.cherrygods.utils.GetPrefix;
+import org.cherrygods.commands.CustomInventoryCommand;
+import org.cherrygods.utils.GetPrefix1;
 
 /**
  * @author CherrGods
  * @since 2018-4-21 09:40:56
  */
 public class EventListener implements Listener {
-    private GetPrefix getPrefix = new GetPrefix();
+    private GetPrefix1 getPrefix1 = new GetPrefix1();
     @EventHandler
     public void InvenClick(InventoryClickEvent event){
         //拿到点击的玩家
@@ -28,7 +29,7 @@ public class EventListener implements Listener {
             return;
         }
         //判断点击的容器是否是创建的自定义容器
-        if(open.getName().equals(ChatColor.DARK_GREEN+"CustomInventory")){
+        if(open.getName().equals(ChatColor.AQUA+"InventoryMenu")){
             //设置监听失效
             event.setCancelled(true);
             //判断被点击的item是否为null，并且item是否没有meta
@@ -39,18 +40,18 @@ public class EventListener implements Listener {
             if(item.getItemMeta().getDisplayName().equals(ChatColor.RED+"HEALTH")){
                 //如果是的话，那么就关闭容器
                 player.closeInventory();
-                CustomInventory customInventory = new CustomInventory();
+                CustomInventoryCommand customInventoryCommand = new CustomInventoryCommand();
                 player.setHealth(20);
-                customInventory.newInventory(player);
+                customInventoryCommand.newInventory(player);
             }
             //判断被点击的item是否是自定义item的food
             if(item.getItemMeta().getDisplayName().equals(ChatColor.RED+"FOOD")){
                 //如果是的话，那么就关闭容器
                 player.closeInventory();
 
-                CustomInventory customInventory = new CustomInventory();
+                CustomInventoryCommand customInventoryCommand = new CustomInventoryCommand();
                 player.setFoodLevel(20);
-                customInventory.newInventory(player);
+                customInventoryCommand.newInventory(player);
             }
         }
     }

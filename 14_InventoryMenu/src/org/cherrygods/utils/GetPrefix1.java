@@ -9,7 +9,7 @@ import org.cherrygods.main.InventoryMenuClass;
  * @author CherrGods
  * @since 2018-4-21 09:37:44
  */
-public class GetPrefix {
+public class GetPrefix1 {
     public Plugin plugin = InventoryMenuClass.getPlugin(InventoryMenuClass.class);
     /**
      * serverPrefix:服务器里的插件前缀

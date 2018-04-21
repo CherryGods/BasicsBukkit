@@ -33,7 +33,7 @@ public class EventListener implements Listener {
     public void onNewPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         //判断玩家是否进入过服务器
-        if (player.hasPlayedBefore()) {
+        if (!player.hasPlayedBefore()) {
             player.setHealth(1);
             event.setJoinMessage("");
             player.sendMessage(prefix+ChatColor.YELLOW+"The server is "+ChatColor.GOLD+plugin.getServer().getName());

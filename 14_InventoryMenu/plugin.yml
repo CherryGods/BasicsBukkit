@@ -1,4 +1,9 @@
 name: InventoryMenu
 main: org.cherrygods.main.InventoryMenuClass
 version: 1.0
-author : CherryGods
+author: CherryGods
+
+commands:
+  inventorymenu:
+    usage: /<commands>
+    description: InventoryMenu Command

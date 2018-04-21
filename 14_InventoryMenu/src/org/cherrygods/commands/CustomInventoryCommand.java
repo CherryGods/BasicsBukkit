@@ -1,20 +1,24 @@
-package org.cherrygods.listeners;
+package org.cherrygods.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.cherrygods.main.InventoryMenuClass;
-import org.bukkit.plugin.Plugin;
+import org.cherrygods.utils.GetPrefix1;
 
 /**
  * @author CherrGods
- * @since 2018-4-21 09:49:56
+ * @since 2018-4-21 15:00:54
  */
-public class CustomInventory implements Listener{
+public class CustomInventoryCommand implements CommandExecutor {
+    public String cmd =  "inventorymenu";
+    private GetPrefix1 getPrefix1 = new GetPrefix1();
     public void newInventory(Player player){
         //创建一个容器
         Inventory inventory = player.getServer().createInventory(null,9,ChatColor.AQUA+"InventoryMenu");
@@ -49,5 +53,20 @@ public class CustomInventory implements Listener{
         inventory.setItem(8,emptyItem);
         //打开容器
         player.openInventory(inventory);
+    }
+
+    @Override
+    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+        if(commandSender instanceof Player){
+            if(command.getName().equalsIgnoreCase(cmd)){
+                Player player = (Player) commandSender;
+                player.sendMessage("tt");
+                newInventory(player);
+                return true;
+            }
+            commandSender.sendMessage(getPrefix1.serverPrefix+ChatColor.RED+"Only player can use this command");
+            return true;
+        }
+        return false;
     }
 }

@@ -18,14 +18,15 @@ public class OpenInventoryCommand implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if(commandSender instanceof Player){
             if(command.getName().equalsIgnoreCase(openInventory)){
-                Player player = (Player) commandSender;
+                Player player =
+                        (Player) commandSender;
                 EventListener eventListener = new EventListener();
                 eventListener.newInventory(player);
-                return false;
+                return true;
             }
-            commandSender.sendMessage(getPrefix+"Only Player can use this command");
-            return false;
+            return true;
         }
+        commandSender.sendMessage(getPrefix.cmdPrefix+"Only Player can use this command");
         return false;
     }
 }

@@ -10,6 +10,6 @@ import org.cherrygods.item.CustomerItems;
  * @author CherrGods
  * @since 2018-4-18 13:30:36
  */
-public class EventClass implements Listener {
+public class EventClass implements Listener{
     //nothing
 }

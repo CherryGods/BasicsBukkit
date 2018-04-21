@@ -15,7 +15,7 @@ import org.cherrygods.utils.GetPrefix;
  * @author CherrGods
  * @since 2018-4-19 14:05:09
  */
-public class GiveItemCommand extends CommandExecute implements CommandExecutor {
+public class GiveItemCommand implements CommandExecutor {
     public String cmd1 = "giveitem";
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
