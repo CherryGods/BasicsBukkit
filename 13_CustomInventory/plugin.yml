@@ -5,5 +5,5 @@ author: CherryGods
 
 commands:
   openinventory:
-    usage: /<commands>
+    usage: /<openinventory>
     description: 打开自定义容器
