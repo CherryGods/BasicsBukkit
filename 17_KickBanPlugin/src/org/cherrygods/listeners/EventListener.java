@@ -51,7 +51,7 @@ public class EventListener implements Listener {
             }else {
                 //否则在服务器内执行一条命令,ban掉这个玩家
                 plugin.getServer().dispatchCommand(
-                        plugin.getServer().getConsoleSender(),"ban "+uuid+" §4You have reached  the Maximum amount of TNT places!");
+                        plugin.getServer().getConsoleSender(),"ban "+player.getDisplayName()+" §4You have reached  the Maximum amount of TNT places!");
             }
         }else {
             System.out.println("first if not insert");
