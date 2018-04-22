@@ -2,6 +2,7 @@ package org.cherrygods.main;
 
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.cherrygods.commands.WarpCommand;
 import org.cherrygods.utils.TeleportingWarpingPrefix;
 
 /**
@@ -10,6 +11,7 @@ import org.cherrygods.utils.TeleportingWarpingPrefix;
  */
 public class TeleportingWarpingClass extends JavaPlugin {
     private TeleportingWarpingPrefix getPrefix;
+    private WarpCommand warpCommand;
     @Override
     public void onDisable() {
         getServer().getConsoleSender().sendMessage(getPrefix.cmdPrefix+ChatColor.AQUA+"has been Disable");
@@ -19,8 +21,11 @@ public class TeleportingWarpingClass extends JavaPlugin {
     @Override
     public void onEnable() {
         getPrefix = new TeleportingWarpingPrefix();
+        warpCommand = new WarpCommand();
         loadConfig();
         getServer().getConsoleSender().sendMessage(getPrefix.cmdPrefix+ChatColor.AQUA+"has been Enable");
+        getCommand(warpCommand.warpCommand).setExecutor(warpCommand);
+        getCommand(warpCommand.setWarpCommand).setExecutor(warpCommand);
         super.onEnable();
     }
     public void loadConfig(){
