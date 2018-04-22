@@ -21,7 +21,7 @@ public class KickBanPluginClass extends JavaPlugin {
     public void onEnable() {
         getPrefix = new KickBanPluginPrefix();
         getServer().getPluginManager().registerEvents(new EventListener(),this);
-        reloadConfig();
+        loadConfig();
         getServer().getConsoleSender().sendMessage(getPrefix.cmdPrefix+ChatColor.AQUA+"has been Enable");
         super.onEnable();
     }
