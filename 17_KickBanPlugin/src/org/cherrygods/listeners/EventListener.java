@@ -34,9 +34,11 @@ public class EventListener implements Listener {
             event.setCancelled(true);
             //拿到玩家被踢出的次数
             int playerKicks = plugin.getConfig().getInt(uuid + ".kicks");
+            System.out.println(playerKicks);
             //拿到玩家被ban的次数
             int playerBanTicks = plugin.getConfig().getInt("KicksTillBan");
             //判断被踢出的次数是否比被ban的次数小
+            System.out.println(playerBanTicks);
             if (playerKicks < playerBanTicks) {
                 //踢出玩家,并且自定义一条消息
                 player.kickPlayer(getPrefix.cmdPrefix+ChatColor.RED+"Placing TNT is  not allowed on this server!");
@@ -49,6 +51,9 @@ public class EventListener implements Listener {
                 plugin.getServer().dispatchCommand(
                         plugin.getServer().getConsoleSender(),"ban"+uuid+" §4You have reached  the Maximum amount of TNT places!");
             }
+        }else {
+            System.out.println("first if not insert");
+            return;
         }
     }
 }
