@@ -14,7 +14,6 @@ public class CommandSignClass extends JavaPlugin {
     @Override
     public void onDisable() {
         getServer().getConsoleSender().sendMessage(getPrefix.cmdPrefix+ChatColor.AQUA+"has been Disable");
-        super.onDisable();
     }
 
     @Override
@@ -22,6 +21,5 @@ public class CommandSignClass extends JavaPlugin {
         getPrefix = new CommandSignPrefix();
         getServer().getPluginManager().registerEvents(new EventListener(),this);
         getServer().getConsoleSender().sendMessage(getPrefix.cmdPrefix+ChatColor.AQUA+"has been Enable");
-        super.onEnable();
     }
 }

@@ -6,6 +6,7 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.cherrygods.utils.CommandSignPrefix;
@@ -16,25 +17,26 @@ import org.cherrygods.utils.CommandSignPrefix;
  */
 public class EventListener implements Listener {
     private CommandSignPrefix getPrefix = new CommandSignPrefix();
+    @EventHandler
     public void signCommand(PlayerInteractEvent event){
         Player player = event.getPlayer();
-        Block clickedBlcok = event.getClickedBlock();
-        BlockState state = clickedBlcok.getState();
+        Block clickedBlock = event.getClickedBlock();
+        BlockState state = clickedBlock.getState();
         if(state instanceof Sign){
             Sign sign = (Sign) state;
             String line1 = sign.getLine(0);
-            String line2 = sign.getLine(1);
+            String line2 = sign.getLine(0);
             if(line1.equalsIgnoreCase("[Creative]")){
                 sign.setLine(0,ChatColor.LIGHT_PURPLE+"[Creative]");
                 sign.update();
                 player.setGameMode(GameMode.CREATIVE);
-                player.sendMessage(getPrefix.serverPrefix+ChatColor.YELLOW+"Your gamemode changed to creative");
+                player.sendMessage(getPrefix.serverPrefix+ChatColor.YELLOW+"Your gamemode changed to §bCreative");
             }
-            if(line1.equalsIgnoreCase("[Survival]")){
+            if(line2.equalsIgnoreCase("[Survival]")){
                 sign.setLine(0,ChatColor.LIGHT_PURPLE+"[Survival]");
                 sign.update();
                 player.setGameMode(GameMode.SURVIVAL);
-                player.sendMessage(getPrefix.serverPrefix+ChatColor.YELLOW+"Your gamemode changed to creative");
+                player.sendMessage(getPrefix.serverPrefix+ChatColor.YELLOW+"Your gamemode changed to §bSurvival");
             }
 
         }
