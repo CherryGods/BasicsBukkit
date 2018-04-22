@@ -1,0 +1,4 @@
+name: KickBanPlugin
+main: org.cherrygods.main.KickBanPluginClass
+version: 1.0
+author: CherryGods
