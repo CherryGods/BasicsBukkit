@@ -14,16 +14,14 @@ public class KickBanPluginClass extends JavaPlugin {
     @Override
     public void onDisable() {
         getServer().getConsoleSender().sendMessage(getPrefix.cmdPrefix+ChatColor.AQUA+"has been Enable");
-        super.onDisable();
     }
 
     @Override
     public void onEnable() {
         getPrefix = new KickBanPluginPrefix();
-        getServer().getPluginManager().registerEvents(new EventListener(),this);
         loadConfig();
+        getServer().getPluginManager().registerEvents(new EventListener(),this);
         getServer().getConsoleSender().sendMessage(getPrefix.cmdPrefix+ChatColor.AQUA+"has been Enable");
-        super.onEnable();
     }
     public void loadConfig(){
         getPrefix = new KickBanPluginPrefix();

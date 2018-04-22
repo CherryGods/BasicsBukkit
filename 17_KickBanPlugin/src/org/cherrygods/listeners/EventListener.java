@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.plugin.Plugin;
 import org.cherrygods.main.KickBanPluginClass;
 import org.cherrygods.utils.KickBanPluginPrefix;
 
@@ -17,11 +18,12 @@ import java.util.UUID;
  * @since 2018-4-22 21:36:12
  */
 public class EventListener implements Listener {
-    private KickBanPluginClass plugin = KickBanPluginClass.getPlugin(KickBanPluginClass.class);
+    private Plugin plugin = KickBanPluginClass.getPlugin(KickBanPluginClass.class);
     private KickBanPluginPrefix getPrefix = new KickBanPluginPrefix();
     @SuppressWarnings("noting")
     @EventHandler
     public void blockPlace(BlockPlaceEvent event) {
+        System.out.println("进都没进是事件");
         //获取监听到的方块
         Block block = event.getBlock();
         //获取监听到的玩家
@@ -41,7 +43,7 @@ public class EventListener implements Listener {
             System.out.println(playerBanTicks);
             if (playerKicks < playerBanTicks) {
                 //踢出玩家,并且自定义一条消息
-                player.kickPlayer(getPrefix.cmdPrefix+ChatColor.RED+"Placing TNT is  not allowed on this server!");
+                player.kickPlayer(getPrefix.serverPrefix+ChatColor.RED+"Placing TNT is  not allowed on this server!");
                 //设置踢出次数+1
                 plugin.getConfig().set(uuid+".kicks",playerKicks+1);
                 //保存config
