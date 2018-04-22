@@ -1,0 +1,4 @@
+name: CommandSign
+main: org.cherrygods.main.CommandSignClass
+version: 1.0
+author : CherryGods
