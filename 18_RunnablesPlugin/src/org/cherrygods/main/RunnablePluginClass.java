@@ -47,6 +47,7 @@ public class RunnablePluginClass extends JavaPlugin implements Listener {
                             ChatColor.AQUA+"Y:"+e.getLocation().getBlockY()+"§4/"+
                             ChatColor.AQUA+"Y:"+e.getLocation().getBlockY()+"§d]"
                     );
+                    e.setCustomNameVisible(true);
                 }
 
             }
