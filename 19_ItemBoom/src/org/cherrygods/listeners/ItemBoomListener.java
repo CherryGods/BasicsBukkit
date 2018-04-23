@@ -40,7 +40,9 @@ public class ItemBoomListener implements Listener {
 //            判断item的类型是否为钻石
             if(item.getType().equals(Material.DIAMOND)){
 //                设置item的数量
-                item.setAmount(item.getAmount()-1);
+                if(!(item.getAmount()<=1)){
+                    item.setAmount(item.getAmount()-1);
+                }
 //                创建一个会boom的item
                 ItemStack boom = new ItemStack(item.getType(),1);
 //                创建一个实体，位置是随机发射出去的，物品是boom，是从loc开始发射
