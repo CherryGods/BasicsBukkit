@@ -54,9 +54,9 @@ public class ItemBoomListener implements Listener {
                     @Override
                     public void run() {
 //                        将物品的位置生成一个爆炸效果
-                        loc.getWorld().createExplosion(drop.getLocation(),10,true);
+                        loc.getWorld().createExplosion(drop.getLocation(),1,true);
                     }
-                }.runTaskLater(plugin,40L);
+                }.runTaskLater(plugin,5L);
             }
         }
     }
