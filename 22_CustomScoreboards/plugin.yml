@@ -1,0 +1,4 @@
+name: CustomScoreboards
+main: org.cherrygods.main.CustomScoreboardsClass
+version: 1.0
+author: cherrygods
