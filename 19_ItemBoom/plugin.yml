@@ -1,0 +1,4 @@
+name: ItemBoom
+main: org.cherrygods.main.ItemBoomClass
+version: 1.0
+author: CherryGods
