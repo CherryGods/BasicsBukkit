@@ -1,0 +1,9 @@
+name: CustomMob
+main: org.cherrygods.main.CustomMobClass
+version: 1.0
+author: CherryGods
+
+commands:
+  mob:
+    usage: /<mob>
+    description: mob
