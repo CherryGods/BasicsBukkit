@@ -2,7 +2,7 @@ package org.cherrygods.main;
 
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.cherrygods.listeners.ItemBoomLisenter;
+import org.cherrygods.listeners.ItemBoomListener;
 import org.cherrygods.utils.ItemBoomPrefix;
 
 /**
@@ -21,7 +21,7 @@ public class ItemBoomClass extends JavaPlugin {
     public void onEnable() {
         getPrefix = new ItemBoomPrefix();
         getServer().getConsoleSender().sendMessage(getPrefix.cmdPrefix+ChatColor.AQUA+"has been Enable");
-        getServer().getPluginManager().registerEvents(new ItemBoomLisenter(),this);
+        getServer().getPluginManager().registerEvents(new ItemBoomListener(),this);
         super.onEnable();
     }
 }
