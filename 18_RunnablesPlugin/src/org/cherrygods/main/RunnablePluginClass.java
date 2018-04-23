@@ -1,6 +1,7 @@
 package org.cherrygods.main;
 
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -35,15 +36,22 @@ public class RunnablePluginClass extends JavaPlugin implements Listener {
             public void run() {
                 for (LivingEntity e : getServer().getWorld("world").getLivingEntities()) {
 
-                    e.setCustomName(e.getType() + "ยง4[" + ChatColor.RED + e.getHealth()
-                            + "ยง8/ยงc" + e.getMaxHealth() + "ยง4]");
+                    e.setCustomName(e.getType() + "§4[" + ChatColor.RED + Integer.valueOf((int) e.getHealth())
+                            +"§4/"+ ChatColor.RED+Integer.valueOf((int) e.getMaxHealth()) + "§4]");
                     e.setCustomNameVisible(true);
 
+                }
+                for (Entity e : getServer().getWorld("world").getEntities()){
+                    e.setCustomName(e.getType()+"§d["+
+                            ChatColor.AQUA+"X:"+e.getLocation().getBlockX()+"§4/"+
+                            ChatColor.AQUA+"Y:"+e.getLocation().getBlockY()+"§4/"+
+                            ChatColor.AQUA+"Y:"+e.getLocation().getBlockY()+"§d]"
+                    );
                 }
 
             }
 
-        }.runTaskTimerAsynchronously(this, 0, 5);
+        }.runTaskTimerAsynchronously(this, 0, 0);
 
     }
 
