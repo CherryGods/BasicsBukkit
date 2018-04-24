@@ -1,0 +1,4 @@
+name: CustomBook
+main: org.cherrygods.main.CustomBookClass
+version: 1.0
+author: CherryGods
