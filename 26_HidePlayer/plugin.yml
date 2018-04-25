@@ -6,3 +6,27 @@ author: CherryGods
 commands:
   hide:
     usage: /<hide>
+  show:
+    usage: /<show>
+  sh:
+    usage: /<sh> <help>
+permissions:
+  hide.all:
+    decription: The permission allows someone to hide all players.
+    default: false
+  hide.me:
+    decription: The permission allows someone to yourself.
+    default: false
+  hide.player:
+    decription: You can hide the people you don't like.
+    default: op
+  show.all:
+    decription: You can let everyone see you.
+    default: op
+  show.me:
+    decription: You can let others see you
+    default: false
+  show.player:
+    decription: You can see someone.
+    default: op
+
