@@ -1,0 +1,8 @@
+name: HidePlayer
+mian: org.cherrygods.main.HidePlayer
+version: 1.0
+author: CherryGods
+
+commands:
+  hide:
+    usage: /<hide>
