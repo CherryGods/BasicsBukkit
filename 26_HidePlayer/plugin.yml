@@ -1,5 +1,5 @@
 name: HidePlayer
-mian: org.cherrygods.main.HidePlayer
+main: org.cherrygods.main.HidePlayerClass
 version: 1.0
 author: CherryGods
 
