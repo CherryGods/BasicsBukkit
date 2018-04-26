@@ -18,11 +18,22 @@ public class PlayerBreakBlockListener implements Listener {
     @EventHandler
     public void setBreakCount(BlockBreakEvent event){
         Player player = event.getPlayer();
-        if(breakCount==0){
+        if(breakCount == 0){
             ActionBarAPI.sendActionBar(player,ChatColor.YELLOW+plugin.getName()+"\n"
                     +ChatColor.LIGHT_PURPLE+"You have broken"+(breakCount+1)+"times of ¡ìb¡ìl"+event.getBlock().getType());
             breakCount++;
             breakCount++;
+        }else {
+                    ActionBarAPI.sendActionBar(player, ChatColor.YELLOW+plugin.getName()+"\n"
+                    +ChatColor.DARK_AQUA + "You have broke " + ChatColor.AQUA
+                    + (breakCount++) + ChatColor.DARK_AQUA + " blocks.");
+        }
+
+        if (breakCount == 10) {
+            ActionBarAPI.sendActionBarToAllPlayers(
+                    ChatColor.YELLOW+plugin.getName()+"\n"
+                    +ChatColor.GOLD + player.getName() + ChatColor.GREEN + " has broken 10 blocks!");
+
         }
     }
 }
